@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Esteps calculator</title>
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  <style global>
+    @import "../styles/global.css";
+  </style>
+</head>
+
+<body>
+  <h1>E-steps Calculator</h1>
+  <form>
+    <label for="steps">Current e-step value</label>
+    <input type="number" id="steps" name="steps">
+    <label for="steps">Measured distance</label>
+    <input type="number" id="distance" name="distance">
+    <input type="submit" value="calculate">
+  </form>
+  <h2>New e-steps value should be:</h2>
+  <h3></h3>
+  <p></p>
+</body>
+
+<script>
+  const form = document.querySelector('form');
+  const log = document.querySelector('h3');
+  const explanation = document.querySelector('p');
+
+  function logSubmit() {
+    const steps = document.querySelector('input[id="steps"]').value;
+    const distance = document.querySelector('input[id="distance"]').value;
+    description(steps, distance);
+    log.textContent = calculate(steps, distance);
+    event.preventDefault();
+  }
+
+  function calculate(steps, distance) {
+    return (steps * 100) / (120 - distance);
+  }
+
+  function description(steps, distance) {
+    explanation.textContent = `There was ${distance}mm remaining, which means you extruded ${120 - distance}mm of filament.`
+  }
+
+  form.addEventListener('submit', logSubmit);
+
+</script>
+
+</html>
