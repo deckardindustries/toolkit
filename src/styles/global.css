@@ -11,22 +11,107 @@
 }
 
 body {
-	padding: 4rem 2rem;
+	padding: 1rem 3rem;
 	width: 100%;
 	min-height: 100vh;
-	display: grid;
-	justify-content: center;
-	background: #f9fafb;
-	color: #111827;
-}
-
-@media (prefers-color-scheme: dark) {
-	body {
-		background: #111827;
-		color: #fff;
-	}
+	background: #eda439;
+	color: #080201;
 }
 
 h1 {
-  font-size: 10em;
+  font-size: 8em;
+  max-width: 80%;
+}
+
+form, form div {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  margin-right: 5em;
+}
+
+label {
+  font-weight: bold;
+  color: black;
+  background: white;
+  width: max-content;
+  padding: 0.5em;
+}
+
+input {
+  background: black;
+  color: white;
+  padding: 1em;
+  width: 20em;
+  font-size: 1em;
+  border: 2px solid white;
+}
+
+form > * + * {
+  margin-block-start: 1.5rem;
+}
+
+form {
+  margin-bottom: 1.5em;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+nav {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+nav svg {
+  width: 3em;
+}
+
+section {
+  display: flex;
+}
+
+h1 {
+  margin-bottom: 0.2em;
+}
+
+h3 {
+  font-size: 2em;
+  background: black;
+  color: white;
+  display: inline-block;
+  padding: 0.5em;
+}
+
+section > div > * + * {
+  margin-block-start: 1.5rem;
+}
+
+input[type=submit] {
+  font-weight: bold;
+}
+
+.animate {
+  animation: fade 1s ease;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
